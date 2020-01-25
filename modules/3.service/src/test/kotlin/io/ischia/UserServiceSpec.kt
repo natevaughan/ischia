@@ -2,7 +2,6 @@ package io.ischia
 
 import io.ischia.domain.User
 import io.ischia.domain.UserDAO
-import io.ischia.exception.NotFoundException
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.mockito.Mockito.`when`
@@ -22,7 +21,7 @@ class UserServiceSpec {
 		service.findById(USER_ID)
 	}
 
-	@Test(expected = NotFoundException::class)
+	@Test
 	fun itShouldReturnTheUser() {
 		`when`(userDAO.findById(USER_ID)).thenReturn(Optional.of(user))
 		val returned = service.findById(USER_ID)

@@ -1,6 +1,6 @@
 package io.ischia
 
-import io.ischia.web.RequestLoggingFilter
+import io.ischia.web.RequestTimingFilter
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.context.annotation.Configuration
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
@@ -9,11 +9,11 @@ import org.springframework.security.web.context.request.async.WebAsyncManagerInt
 
 @Configuration
 @EnableOAuth2Sso
-open class AppSecurity: WebSecurityConfigurerAdapter() {
+open class AppSecurityConfig(val config: TypedConfig): WebSecurityConfigurerAdapter() {
 	override fun configure(http: HttpSecurity) {
 		http
 				// register our request logging filter at the front of the Spring Security filter chain
-				.addFilterBefore(RequestLoggingFilter(), WebAsyncManagerIntegrationFilter::class.java)
+				.addFilterBefore(RequestTimingFilter(config), WebAsyncManagerIntegrationFilter::class.java)
 				.antMatcher("/**")
 				.authorizeRequests()
 				.antMatchers("/", "/callback", "/login**", "/webjars", "/error**")
