@@ -1,0 +1,5 @@
+spring.profiles.active=dev
+server.port=8080
+spring.datasource.url=jdbc:mysql://localhost:3306/ischa?useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+spring.datasource.username=root
+spring.datasource.password=
