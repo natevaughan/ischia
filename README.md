@@ -6,6 +6,8 @@ Goal: an example project that can be forked to save significant time in creating
 
 Current version: `v0.1.0` 
 
+Why "Ischia?" It's an island that I like.
+
 ## Features
 
  - Modular Gradle build that separates domain classes, business logic, and web concerns
