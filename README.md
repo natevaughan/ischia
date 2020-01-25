@@ -4,7 +4,7 @@ Justification: Kotlin and Spring Boot are a productive combo, but it takes signi
 
 Goal: an example project that can be forked to save significant time in creating a headless Kotlin + Spring Boot ReST API.
 
-Current version: `v0.1.0` 
+Current version: `v0.1.1` 
 
 Why "Ischia?" It's an island that I like.
 
@@ -54,7 +54,7 @@ spring.datasource.password=<YOUR MARIADB PASSWORD>
 
 With the development profile (overrides settings using `application-dev.properties`):
 ```
-./gradlew assemble && java -jar -Dspring.profiles.active=dev build/libs/ischia-0.1.0.jar
+./gradlew build assemble && java -jar -Dspring.profiles.active=dev build/libs/ischia-0.1.1.jar
 ``` 
 
 # Modifying the project
@@ -78,5 +78,8 @@ Ischia's module setup uses naming system that ensures the dependency graph remai
 
 # Changelog
 
-#### `v0.1.0` 2019/1/24
+#### `v0.1.1` 2019-01-25
+ - Fix failing test in UserServiceSpec
+
+#### `v0.1.0` 2019-01-24
  - Initial commit, spring boot + spring security + google oauth + JPA/Hibernate

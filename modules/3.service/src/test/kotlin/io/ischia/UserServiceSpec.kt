@@ -22,7 +22,7 @@ class UserServiceSpec {
 		service.findById(USER_ID)
 	}
 
-	@Test(expected = NotFoundException::class)
+	@Test
 	fun itShouldReturnTheUser() {
 		`when`(userDAO.findById(USER_ID)).thenReturn(Optional.of(user))
 		val returned = service.findById(USER_ID)

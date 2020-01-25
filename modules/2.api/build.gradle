@@ -4,7 +4,7 @@ plugins {
 
 println 'building 2.api'
 
-version = '0.1.0-SNAPSHOT'
+version = '0.1.1-SNAPSHOT'
 
 dependencies {
 	implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
