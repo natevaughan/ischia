@@ -24,7 +24,7 @@ class RequestTimingFilter(private val config: TypedConfig): Filter {
 
 	companion object {
 		private val log by logger()
-		private val EXCLUDED_LOGGING_PATHS = setOf("/health-check")
+		private val EXCLUDED_LOGGING_PATHS = setOf("/health-check", "/favicon.ico")
 		private const val HEADER_X_FORWARDED_FOR = "X-Forwarded-For"
 		private const val KEY_ISCHIA_TIME_REQUESTS = "ischia.time.requests"
 	}

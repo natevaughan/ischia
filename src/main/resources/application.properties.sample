@@ -1,3 +1,4 @@
+# Spring configuration
 spring.profiles.active=prod
 server.port=5000
 server.error.whitelabel.enabled=false
@@ -9,16 +10,12 @@ spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL57Dialect
 
-
 # OAuth2 configuration
-security.oauth2.client.clientId=<YOUR GOOGLE OAUTH APP CLIENT ID>
-security.oauth2.client.clientSecret=<YOUR GOOGLE OAUTH APP SECRET>
-security.oauth2.client.preEstablishedRedirectUri=<YOUR PROD REDIRECT URI>/callback
-security.oauth2.client.accessTokenUri=https://www.googleapis.com/oauth2/v3/token
-security.oauth2.client.userAuthorizationUri=https://accounts.google.com/o/oauth2/auth
-security.oauth2.client.tokenName=oauth_token
-security.oauth2.client.authenticationScheme=query
-security.oauth2.client.clientAuthenticationScheme=form
-security.oauth2.client.scope=profile
-security.oauth2.resource.user-info-uri=https://www.googleapis.com/userinfo/v2/me
-security.oauth2.client.useCurrentUri=false
+ischia.oauth2.google.client-id=<GOOGLE OAUTH2 CLIENT ID>
+ischia.oauth2.google.client-secret=<GOOGLE OAUTH2 CLIENT SECRET>
+
+ischia.oauth2.github.client-id=<GITHUB OAUTH2 CLIENT ID>
+ischia.oauth2.github.client-secret=<GITHUB OAUTH2 CLIENT SECRET>
+
+# Miscellaneous configuration
+ischia.time.requests=true

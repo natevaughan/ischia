@@ -1,5 +1,6 @@
 buildscript {
-	ext.spring_version = '2.2.3.RELEASE'
+	ext.spring_version = '2.2.4.RELEASE'
+	ext.spring_security_version = '5.2.1.RELEASE'
 	ext.kotlin_version = '1.3.61'
 	ext.junit_version = '4.12'
 	ext.mockito_version = '1.10.19'
@@ -41,7 +42,8 @@ dependencies {
 	implementation 'com.fasterxml.jackson.module:jackson-module-kotlin:2.9.9'
 
 	implementation "org.springframework.boot:spring-boot-starter-security:$spring_version"
-	implementation "org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:$spring_version"
+	implementation "org.springframework.security:spring-security-oauth2-client:$spring_security_version"
+	implementation "org.springframework.security:spring-security-oauth2-jose:$spring_security_version"
 
 	implementation "org.springframework.boot:spring-boot-starter-data-jpa:$spring_version"
 	runtime 'org.mariadb.jdbc:mariadb-java-client:2.1.2'

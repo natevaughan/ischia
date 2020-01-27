@@ -26,7 +26,7 @@ class HomeController(private val userService: UserService) {
 	@ResponseBody
 	fun callback(): String {
 		val auth = SecurityContextHolder.getContext().authentication
-		log.info("User was ${auth.principal}")
+		log.info("Callback user was ${auth.principal}")
 		return "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><title>Home</title></head><body>You are logged in.</body></html>"
 	}
 }

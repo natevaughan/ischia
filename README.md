@@ -47,7 +47,7 @@ Copy `application-dev.properties.sample` and `application.properties.sample` and
 The following JDBC connection params should match your local Mariadb database:
 
 ```
-spring.datasource.url=jdbc:mysql://localhost:3306/ischa?useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+spring.datasource.url=jdbc:mysql://localhost:3306/ischia?useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
 spring.datasource.username=<YOUR MARIADB USER>
 spring.datasource.password=<YOUR MARIADB PASSWORD>
 ```
@@ -56,8 +56,14 @@ spring.datasource.password=<YOUR MARIADB PASSWORD>
 
 With the development profile (overrides settings using `application-dev.properties`):
 ```
-./gradlew assemble && java -jar -Dspring.profiles.active=dev build/libs/ischia-0.2.0.jar
+./gradlew build assemble && java -jar -Dspring.profiles.active=dev build/libs/ischia-0.2.0.jar
 ``` 
+
+In debug mode (using IntelliJ defaults):
+
+```
+./gradlew build assemble && java -jar -Dspring.profiles.active=dev -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 build/libs/ischia-0.2.0.jar 
+```
 
 # Modifying the project
 
