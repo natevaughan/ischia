@@ -69,11 +69,11 @@ Log into Github to create a Github application. Click your user icon (top right)
 
 Add Application Name, Url, and Description to any values you desire.
 
-Set "Application Callback Url" to `http://localhost:8080/login/oauth2/code` (IMPORTANT).
+Set "Application Callback Url" to `http://localhost:8080/login/oauth2/code/github` (IMPORTANT).
 
 Save your new oauth app.
 
-Now copy the Client ID and Client Secret fields to your `application.properties`:
+Now copy the Client ID and Client Secret fields from the Github UI to your `application.properties`:
 
 ```
 # OAuth2 configuration
@@ -115,10 +115,13 @@ Ischia's module setup uses naming system that ensures the dependency graph remai
 
 # Changelog
 
-#### `v0.2.0` 2019/1/25
+#### `v0.2.0` 2019-01-26
  - Upgrade to Spring Security 5.2 and eliminate the deprecated `@EnableOauth2Sso`
  - Added TypedConfig and TypedSpringConfig implementation
  - Switched to Github oauth
+
+#### `v0.1.1` 2019-01-25
+ - Fix failing test in UserServiceSpec
  
-#### `v0.1.0` 2019/1/24
+#### `v0.1.0` 2019-01-24
  - Initial commit, spring boot + spring security + google oauth + JPA/Hibernate
