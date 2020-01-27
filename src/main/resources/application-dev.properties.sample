@@ -1,8 +1,5 @@
 spring.profiles.active=dev
 server.port=8080
 spring.datasource.url=jdbc:mysql://localhost:3306/ischia?useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
-spring.datasource.username=root
-spring.datasource.password=
-
-ischia.oauth2.google.redirect-uri=http://localhost:8080/login/oauth2/code/google
-ischia.oauth2.github.redirect-uri=http://localhost:8080/login/oauth2/code/github
+spring.datasource.username=<YOUR MARIADB USER>
+spring.datasource.password=<YOUR MARIADB PASSWORD>

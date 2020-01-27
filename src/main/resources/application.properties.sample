@@ -11,9 +11,6 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL57Dialect
 
 # OAuth2 configuration
-ischia.oauth2.google.client-id=<GOOGLE OAUTH2 CLIENT ID>
-ischia.oauth2.google.client-secret=<GOOGLE OAUTH2 CLIENT SECRET>
-
 ischia.oauth2.github.client-id=<GITHUB OAUTH2 CLIENT ID>
 ischia.oauth2.github.client-secret=<GITHUB OAUTH2 CLIENT SECRET>
 

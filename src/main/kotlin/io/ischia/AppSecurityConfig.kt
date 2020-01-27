@@ -25,22 +25,13 @@ open class AppSecurityConfig(private val config: TypedConfig): WebSecurityConfig
 
 	@Bean
 	open fun clientRegistrationRepository(): ClientRegistrationRepository {
-		return InMemoryClientRegistrationRepository(googleClientRegistration(), githubClientRegsitration())
-	}
-
-	private fun googleClientRegistration(): ClientRegistration {
-		return CommonOAuth2Provider.GOOGLE.getBuilder("google")
-				.clientId(config.getString("ischia.oauth2.google.client-id"))
-				.clientSecret(config.getString("ischia.oauth2.google.client-secret"))
-				.redirectUriTemplate(config.getString("ischia.oauth2.google.redirect-uri"))
-				.build()
+		return InMemoryClientRegistrationRepository(githubClientRegsitration())
 	}
 
 	private fun githubClientRegsitration(): ClientRegistration {
 		return CommonOAuth2Provider.GITHUB.getBuilder("github")
 				.clientId(config.getString("ischia.oauth2.github.client-id"))
 				.clientSecret(config.getString("ischia.oauth2.github.client-secret"))
-				.redirectUriTemplate(config.getString("ischia.oauth2.github.redirect-uri"))
 				.build()
 	}
 }
