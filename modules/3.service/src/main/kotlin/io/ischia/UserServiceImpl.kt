@@ -2,7 +2,6 @@ package io.ischia
 
 import io.ischia.domain.User
 import io.ischia.domain.UserDAO
-import io.ischia.exception.NotFoundException
 import javax.inject.Named
 
 @Named("userService")

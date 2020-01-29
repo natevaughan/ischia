@@ -2,7 +2,6 @@ package io.ischia
 
 import io.ischia.domain.User
 import io.ischia.domain.UserDAO
-import io.ischia.exception.NotFoundException
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.mockito.Mockito.`when`

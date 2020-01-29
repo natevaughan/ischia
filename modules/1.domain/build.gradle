@@ -6,7 +6,7 @@ plugins {
 
 println 'building 1.domain'
 
-version = '0.1.1-SNAPSHOT'
+version = '0.2.0-SNAPSHOT'
 
 // adds a no-arg constructor to any classes with specified annotation (necessary for Hibernate)
 noArg {
