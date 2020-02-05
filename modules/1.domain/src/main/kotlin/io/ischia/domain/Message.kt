@@ -5,8 +5,8 @@ import javax.persistence.Id
 import javax.persistence.ManyToOne
 
 @Entity
-class Activity(
-		val name: String,
+class Message(
+		val text: String,
 		@ManyToOne
 		val creator: User,
 		@Id

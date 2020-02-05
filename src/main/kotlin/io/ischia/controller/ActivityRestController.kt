@@ -1,11 +1,10 @@
 package io.ischia.controller
 
-import io.ischia.domain.Activity
+import io.ischia.domain.Message
 import io.ischia.domain.ActivityDAO
 import io.ischia.domain.User
 import io.ischia.logger
 import org.springframework.security.core.Authentication
-import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.oauth2.core.user.DefaultOAuth2User
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.RequestMapping
@@ -21,10 +20,10 @@ class ActivityRestController(private val activityDAO: ActivityDAO) {
 
 	@RequestMapping("/activity")
 	@ResponseBody
-	fun login(auth: Authentication): List<Activity> {
+	fun login(auth: Authentication): List<Message> {
 		val user = auth.principal as DefaultOAuth2User
 //		return activityDAO.findAllByCreator()
 		val creator = User(user.attributes["email"] as String? ?: "foo@bar.com")
-		return listOf(Activity("Hiking", creator, "hiking"), Activity("Sailing", creator, "sailing"))
+		return listOf(Message("Hiking", creator, "hiking"), Message("Sailing", creator, "sailing"))
 	}
 }

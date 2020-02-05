@@ -1,6 +1,6 @@
 package io.ischia.repository
 
-import io.ischia.domain.Activity
+import io.ischia.domain.Message
 import io.ischia.domain.ActivityDAO
 import io.ischia.domain.User
 import io.ischia.domain.UserDAO
@@ -13,4 +13,4 @@ import org.springframework.data.repository.CrudRepository
  * core business logic
  */
 interface UserRepository: UserDAO, CrudRepository<User, Long>
-interface ActivityRepository: ActivityDAO, CrudRepository<Activity, String>
+interface ActivityRepository: ActivityDAO, CrudRepository<Message, String>
