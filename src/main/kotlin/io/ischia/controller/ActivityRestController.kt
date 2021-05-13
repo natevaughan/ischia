@@ -5,7 +5,6 @@ import io.ischia.domain.ActivityDAO
 import io.ischia.domain.User
 import io.ischia.logger
 import org.springframework.security.core.Authentication
-import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.oauth2.core.user.DefaultOAuth2User
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.RequestMapping

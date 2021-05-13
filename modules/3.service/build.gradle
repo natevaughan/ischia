@@ -4,14 +4,12 @@ plugins {
 
 println 'building 3.service'
 
-version = '0.2.0-SNAPSHOT'
-
-
 dependencies {
 	implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
 	implementation project(":modules:1.domain")
+	implementation project(":modules:1.util")
 	implementation project(":modules:2.api")
 
 	implementation 'javax.inject:javax.inject:1'

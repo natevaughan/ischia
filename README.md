@@ -1,17 +1,17 @@
-# Ischia: A Kotlin Spring Boot Starter
+# Ischia: A Kotlin Spring Boot Starter Template
 
 Justification: Kotlin and Spring Boot are a productive combo, but it takes significant setup to get past all of the configuration.
 
-Goal: an example project that can be forked to save significant time in creating a headless Kotlin + Spring Boot ReST API.
+Goal: an example project that can be forked to save significant time in creating a headless Kotlin + Spring Boot API.
 
-Current version: `v0.2.0` 
+Current version: `v0.2.1` 
 
-Why "Ischia?" It's an island that I like.
+Why "Ischia?" It's a cool island.
 
 ## Features
 
  - Modular Gradle build that separates domain classes, business logic, and web concerns
- - < 10 second restart time after initial build, even for large/complex projects
+ - fast restart time after initial build, even for large/complex projects
  - Incremental Kotlin compilation
  - Lightning-fast test iteration cycles inside modules
  - Embedded servlet container and runnable jar
@@ -20,7 +20,7 @@ Why "Ischia?" It's an island that I like.
  
 ## Components
 
- - Kotlin 1.3
+ - Kotlin 1.5.0
  - Spring Boot 2.2
  - Gradle 6.1
  - Spring Security 5.2
@@ -31,6 +31,7 @@ Why "Ischia?" It's an island that I like.
  - Embedded Jetty servlet container
  - SLF4J with Jetty Util Logging
  - JUnit + Mockito
+ - Liquibase for database migrations
 
 # Building and Running Ischia
 
@@ -85,10 +86,11 @@ The application is now ready to run!
 
 # Running the project
 
-For local development in debug mode, run the following command:
+For convenience, a shell script has been included to simplify startup. From the project root, first make the script executable:
 ```
-./gradlew build assemble && java -jar -Dspring.profiles.active=dev -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 build/libs/ischia-0.2.0.jar
-``` 
+chmod +x ischia
+```
+Then start the app using `./ischia 1`
 
 This set's Springs active profile to `dev`, and tells Spring to read first any settings in `application.properties`, and to overwrite them with any values contained in `application-dev.properties`.
 
@@ -113,7 +115,23 @@ Ischia's module setup uses naming system that ensures the dependency graph remai
  - Begin the name of the module with a number that is one greater its highest-numbered dependency
  - Favor depending on api/interface modules over implementation modules (e.g. depend on `2.api` rather than `3.service`) 
 
+
+## Packaging for deployment
+
+To package for deployment, first build a runnable jar:
+```
+./ischia 3
+```
+
+Deploy to your favorite Java 8 runtime environment!
+
 # Changelog
+
+#### `v0.2.1` 2021-05-13
+ - Upgrade to Spring Security 5.4.6
+ - Added 1.util module for utility methods and interfaces
+ - Added ./ischia shell script for startup
+ - Added liquibase for DB migrations
 
 #### `v0.2.0` 2019-01-26
  - Upgrade to Spring Security 5.2 and eliminate the deprecated `@EnableOauth2Sso`

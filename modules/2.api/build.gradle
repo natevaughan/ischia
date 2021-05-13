@@ -4,7 +4,7 @@ plugins {
 
 println 'building 2.api'
 
-version = '0.2.0-SNAPSHOT'
+version = '0.2.1-SNAPSHOT'
 
 dependencies {
 	implementation project(":modules:1.domain")

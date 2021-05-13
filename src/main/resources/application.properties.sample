@@ -10,6 +10,11 @@ spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL57Dialect
 
+# Liquibase (migration) configuration
+spring.liquibase.enabled=true
+spring.liquibase.change-log=classpath:/liquibase/master.xml
+logging.level.liquibase=INFO
+
 # OAuth2 configuration
 ischia.oauth2.github.client-id=<GITHUB OAUTH2 CLIENT ID>
 ischia.oauth2.github.client-secret=<GITHUB OAUTH2 CLIENT SECRET>

@@ -1,0 +1,25 @@
+#!/usr/bin/env sh
+
+mode=${1:-0}
+
+case "$mode" in
+"1")  echo "starting ischia with debug and profile=dev..."
+    SPRING_PROFILES_ACTIVE=dev ./gradlew -Ddebug-ischia=true test bootRun
+    ;;
+"2")  echo "starting ischia with profile=dev..."
+    SPRING_PROFILES_ACTIVE=dev ./gradlew test bootRun
+    ;;
+"3")  echo "assembling ischia..."
+    ./gradlew clean build assemble
+    echo "ischia artifact ready for deployment at build/libs/ischia-0.2.1.jar"
+    ;;
+*)  echo ""
+    echo "Usage: ./ischia [1,2,3]"
+    echo ""
+    echo "          Debug | Profile | Clean"
+    echo "[1]       Y       dev       N (recommended for development)"
+    echo "[2]       N       dev       N"
+    echo "[4]       -       -         Y (assemble an artifact for deployment)"
+    exit
+    ;;
+esac

@@ -1,4 +1,5 @@
 rootProject.name = 'ischia'
 include 'modules:1.domain'
+include 'modules:1.util'
 include 'modules:2.api'
 include 'modules:3.service'

@@ -1,0 +1,5 @@
+plugins {
+	id "org.jetbrains.kotlin.jvm"
+}
+
+println 'building 1.util'
