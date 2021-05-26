@@ -4,7 +4,7 @@ Justification: Kotlin and Spring Boot are a productive combo, but it takes signi
 
 Goal: an example project that can be forked to save significant time in creating a headless Kotlin + Spring Boot API.
 
-Current version: `v0.2.1` 
+Current version: `v0.2.2` 
 
 Why "Ischia?" It's a cool island.
 
@@ -20,9 +20,9 @@ Why "Ischia?" It's a cool island.
  
 ## Components
 
- - Kotlin 1.5.0
- - Spring Boot 2.2
- - Gradle 6.1
+ - Kotlin 1.5.10
+ - Java 11
+ - Spring Boot 2.3
  - Spring Security 5.2
  - Github OAuth2
  - JPA and Hibernate
@@ -36,7 +36,7 @@ Why "Ischia?" It's a cool island.
 # Building and Running Ischia
 
 Requirements: 
- - Java JDK 1.8
+ - Java JDK 11
  - MariaDB (10.4.11 recommended) or MySQL (requires additional configuration)
 
 # Project setup
@@ -126,6 +126,10 @@ To package for deployment, first build a runnable jar:
 Deploy to your favorite Java 8 runtime environment!
 
 # Changelog
+
+#### `v0.2.2` 2021-05-26
+ - Upgrade to JDK 11
+ - Upgrade to Kotlin 1.5.10
 
 #### `v0.2.1` 2021-05-13
  - Upgrade to Spring Security 5.4.6

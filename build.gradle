@@ -1,7 +1,7 @@
 buildscript {
 	ext.spring_version = '2.3.4.RELEASE'
 	ext.spring_security_version = '5.4.6'
-	ext.kotlin_version = '1.5.0'
+	ext.kotlin_version = '1.5.10'
 	ext.junit_version = '4.12'
 	ext.mockito_version = '1.10.19'
 	ext.slf4j = [:]
@@ -18,7 +18,7 @@ buildscript {
 
 plugins {
 	id 'org.springframework.boot' version '2.2.3.RELEASE'
-	id "org.jetbrains.kotlin.jvm" version '1.5.0-RC'
+	id "org.jetbrains.kotlin.jvm" version '1.5.10'
 }
 
 repositories {
@@ -41,6 +41,7 @@ dependencies {
 	}
 	implementation "org.springframework.boot:spring-boot-starter-jetty:$spring_version"
 	implementation 'com.fasterxml.jackson.module:jackson-module-kotlin:2.9.9'
+	implementation "org.springframework.boot:spring-boot-starter-cache:$spring_version"
 
 	implementation "org.springframework.boot:spring-boot-starter-security:$spring_version"
 	implementation "org.springframework.security:spring-security-oauth2-client:$spring_security_version"
@@ -57,22 +58,22 @@ dependencies {
 
 compileKotlin {
 	kotlinOptions {
-		jvmTarget = "1.8"
+		jvmTarget = "11"
 	}
 }
 compileTestKotlin {
 	kotlinOptions {
-		jvmTarget = "1.8"
+		jvmTarget = "11"
 	}
 }
 
 group = 'io.ischia'
-version = '0.2.1'
+version = '0.2.2'
 
 allprojects {
 
-	sourceCompatibility = 1.8
-	targetCompatibility = 1.8
+	sourceCompatibility = 11
+	targetCompatibility = 11
 
 	repositories {
 		mavenLocal()
@@ -91,6 +92,7 @@ subprojects {
 		implementation "org.slf4j:slf4j-api:${slf4j.version}"
 
 		implementation 'org.liquibase:liquibase-core:3.8.1'
+		implementation 'jakarta.xml.bind:jakarta.xml.bind-api:2.3.2' // needed for liquibase + JDK 11
 
 		testImplementation "junit:junit:$junit_version"
 		testImplementation "org.mockito:mockito-all:$mockito_version"

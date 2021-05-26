@@ -4,6 +4,8 @@ plugins {
 
 println 'building 3.service'
 
+version = '1.0.0-SNAPSHOT'
+
 dependencies {
 	implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"

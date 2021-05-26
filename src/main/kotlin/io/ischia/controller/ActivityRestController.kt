@@ -1,8 +1,8 @@
 package io.ischia.controller
 
+import io.ischia.UserService
 import io.ischia.domain.Activity
 import io.ischia.domain.ActivityDAO
-import io.ischia.domain.User
 import io.ischia.logger
 import org.springframework.security.core.Authentication
 import org.springframework.security.oauth2.core.user.DefaultOAuth2User
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody
 
 @Controller
 @RequestMapping("/rest")
-class ActivityRestController(private val activityDAO: ActivityDAO) {
+class ActivityRestController(private val activityDAO: ActivityDAO, private val userService: UserService) {
 
 	companion object {
 		private val log by logger()
@@ -20,10 +20,10 @@ class ActivityRestController(private val activityDAO: ActivityDAO) {
 
 	@RequestMapping("/activity")
 	@ResponseBody
-	fun login(auth: Authentication): List<Activity> {
+	fun getActivityForUser(auth: Authentication): List<Activity> {
 		val user = auth.principal as DefaultOAuth2User
-//		return activityDAO.findAllByCreator()
-		val creator = User(user.attributes["email"] as String? ?: "foo@bar.com")
-		return listOf(Activity("Hiking", creator, "hiking"), Activity("Sailing", creator, "sailing"))
+		val dbUser = userService.findByEmail(user.name)
+		log.info("User ${dbUser.id} accessed activity")
+		return activityDAO.findAllByCreator(dbUser)
 	}
 }

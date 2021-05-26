@@ -10,4 +10,5 @@ import java.util.Optional
  */
 interface UserDAO {
 	fun findById(id: Long): Optional<User>
+	fun findByEmail(email: String): Optional<User>
 }

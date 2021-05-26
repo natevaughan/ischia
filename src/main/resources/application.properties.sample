@@ -1,5 +1,6 @@
 # Spring configuration
 spring.profiles.active=prod
+spring.jpa.open-in-view=true
 server.port=5000
 server.error.whitelabel.enabled=false
 spring.main.banner-mode=off

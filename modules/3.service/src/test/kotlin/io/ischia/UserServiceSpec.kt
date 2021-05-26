@@ -10,7 +10,10 @@ import java.util.Optional
 
 class UserServiceSpec {
 
-	private val USER_ID = 42L
+	companion object {
+		private const val USER_ID = 42L
+	}
+
 	private val user = User("foo@bar.com", USER_ID)
 	private val userDAO = mock(UserDAO::class.java)
 	private val service = UserServiceImpl(userDAO)

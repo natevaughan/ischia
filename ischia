@@ -11,7 +11,7 @@ case "$mode" in
     ;;
 "3")  echo "assembling ischia..."
     ./gradlew clean build assemble
-    echo "ischia artifact ready for deployment at build/libs/ischia-0.2.1.jar"
+    echo "ischia artifact ready for deployment at build/libs/ischia-0.2.2.jar"
     ;;
 *)  echo ""
     echo "Usage: ./ischia [1,2,3]"
