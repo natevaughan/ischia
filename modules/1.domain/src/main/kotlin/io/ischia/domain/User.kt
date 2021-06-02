@@ -4,6 +4,9 @@ import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.Id
 
+/**
+ * Example entity class
+ */
 @Entity
 class User(
 	val email: String,

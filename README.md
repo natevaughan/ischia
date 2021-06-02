@@ -4,14 +4,14 @@ Justification: Kotlin and Spring Boot are a productive combo, but it takes signi
 
 Goal: an example project that can be forked to save significant time in creating a headless Kotlin + Spring Boot API.
 
-Current version: `v0.2.2` 
+Current version: `v0.2.3` 
 
 Why "Ischia?" It's a cool island.
 
 ## Features
 
  - Modular Gradle build that separates domain classes, business logic, and web concerns
- - fast restart time after initial build, even for large/complex projects
+ - Fast restart time after initial build, even for large/complex projects
  - Incremental Kotlin compilation
  - Lightning-fast test iteration cycles inside modules
  - Embedded servlet container and runnable jar
@@ -21,17 +21,17 @@ Why "Ischia?" It's a cool island.
 ## Components
 
  - Kotlin 1.5.10
- - Java 11
- - Spring Boot 2.3
- - Spring Security 5.2
+ - Java 11 (or Java 8)
+ - Spring Boot 2.5
+ - Spring Security 5.5
  - Github OAuth2
  - JPA and Hibernate
  - Mariadb JDBC connector
  - Spring Docs
  - Embedded Jetty servlet container
  - SLF4J with Jetty Util Logging
- - JUnit + Mockito
- - Liquibase for database migrations
+ - JUnit + Mockito (testing)
+ - Liquibase (database migrations)
 
 # Building and Running Ischia
 
@@ -110,11 +110,17 @@ Ischia is an example project that is meant to be forked directly and transformed
 
 ## Adding a module
 
-Ischia's module setup uses naming system that ensures the dependency graph remains a DAG. Recommendations for adding new modules:
+Ischia's module setup uses naming system that ensures the dependency graph remains a [DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph). Recommendations for adding new modules:
  
  - Begin the name of the module with a number that is one greater its highest-numbered dependency
  - Favor depending on api/interface modules over implementation modules (e.g. depend on `2.api` rather than `3.service`) 
 
+## Targeting Java 8
+
+If you prefer to target JDK 1.8, you can do so by changing four values in the top-level `build.gradle`, all marked with the following comment:
+```
+"11" // or "1.8" for Java 8
+```
 
 ## Packaging for deployment
 
@@ -123,10 +129,16 @@ To package for deployment, first build a runnable jar:
 ./ischia 3
 ```
 
-Deploy to your favorite Java 8 runtime environment!
+Deploy to your favorite Java 11 (or Java 8) runtime environment!
 
 # Changelog
 
+#### `v0.2.3` 2021-06-01
+ - Add docs for some interfaces
+ - Upgrade to Gradle 7
+ - Upgrade to Spring Boot 2.5.0
+ - Upgrade to Spring Security 5.5.0
+ 
 #### `v0.2.2` 2021-05-26
  - Upgrade to JDK 11
  - Upgrade to Kotlin 1.5.10
