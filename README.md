@@ -4,7 +4,7 @@ Justification: Kotlin and Spring Boot are a productive combo, but it takes signi
 
 Goal: an example project that can be forked to save significant time in creating a headless Kotlin + Spring Boot API.
 
-Current version: `v0.2.3` 
+Current version: `v0.2.4` 
 
 Why "Ischia?" It's a cool island.
 
@@ -20,10 +20,10 @@ Why "Ischia?" It's a cool island.
  
 ## Components
 
- - Kotlin 1.5.10
+ - Kotlin 1.7.10
  - Java 11 (or Java 8)
- - Spring Boot 2.5
- - Spring Security 5.5
+ - Spring Boot 2.7
+ - Spring Security 5.7
  - Github OAuth2
  - JPA and Hibernate
  - Mariadb JDBC connector
@@ -133,11 +133,18 @@ Deploy to your favorite Java 11 (or Java 8) runtime environment!
 
 # Changelog
 
+#### `v0.2.4` 2022-09-14
+- Upgrade to Kotlin 1.7.10
+- Upgrade to Gradle 7.5.1
+- Upgrade to Spring Boot 2.7.3
+- Upgrade to Spring Security 5.7.1 and use new API for http security config
+- Upgrade to Guava 31.1-jre
+
 #### `v0.2.3` 2021-06-01
- - Add docs for some interfaces
- - Upgrade to Gradle 7
- - Upgrade to Spring Boot 2.5.0
- - Upgrade to Spring Security 5.5.0
+- Add docs for some interfaces
+- Upgrade to Gradle 7
+- Upgrade to Spring Boot 2.5.0
+- Upgrade to Spring Security 5.5.0
  
 #### `v0.2.2` 2021-05-26
  - Upgrade to JDK 11

@@ -1,7 +1,7 @@
 buildscript {
-	ext.spring_version = '2.5.0'
-	ext.spring_security_version = '5.5.0'
-	ext.kotlin_version = '1.5.10'
+	ext.spring_version = '2.7.3'
+	ext.spring_security_version = '5.7.3'
+	ext.kotlin_version = '1.7.10'
 	ext.junit_version = '4.12'
 	ext.mockito_version = '1.10.19'
 	ext.slf4j = [:]
@@ -17,8 +17,8 @@ buildscript {
 }
 
 plugins {
-	id 'org.springframework.boot' version '2.5.0'
-	id "org.jetbrains.kotlin.jvm" version '1.5.10'
+	id 'org.springframework.boot' version '2.7.0'
+	id "org.jetbrains.kotlin.jvm" version '1.7.10'
 }
 
 repositories {
@@ -40,7 +40,7 @@ dependencies {
 		exclude group: "org.springframework.boot", module: "spring-boot-starter-tomcat"
 	}
 	implementation "org.springframework.boot:spring-boot-starter-jetty:$spring_version"
-	implementation 'com.fasterxml.jackson.module:jackson-module-kotlin:2.9.9'
+	implementation 'com.fasterxml.jackson.module:jackson-module-kotlin:2.13.2'
 	implementation "org.springframework.boot:spring-boot-starter-cache:$spring_version"
 
 	implementation "org.springframework.boot:spring-boot-starter-security:$spring_version"
@@ -50,7 +50,7 @@ dependencies {
 	implementation "org.springframework.boot:spring-boot-starter-data-jpa:$spring_version"
 	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client:2.7.2'
 
-	implementation("com.google.guava:guava:28.2-jre")
+	implementation("com.google.guava:guava:31.1-jre")
 
 	implementation "org.slf4j:slf4j-api:${slf4j.version}"
 	implementation "javax.inject:javax.inject:1"
@@ -68,7 +68,7 @@ compileTestKotlin {
 }
 
 group = 'io.ischia'
-version = '0.2.2'
+version = '0.2.4'
 
 allprojects {
 
@@ -78,7 +78,6 @@ allprojects {
 	repositories {
 		mavenLocal()
 		mavenCentral()
-		jcenter()
 	}
 }
 
